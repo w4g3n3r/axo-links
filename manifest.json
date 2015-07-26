@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "Axo Links",
+    "version": "0.0.1",
+
+    "description": "Finds axosoft tags on web pages and creates links to the specified items in your axosoft task managment software.",
+
+    "icons": {
+	"16": "icons/axo16.png",
+//	"32": "icons/axo32.png",
+	"38": "icons/axo38.png",
+	"128": "icons/axo128.png"
+    },
+
+    "background": {
+	"scripts": ["background.js"]
+    },
+
+    "content_scripts": [{
+	"matches": ["http://github.com/*", "https://github.com/*"],
+	"js": ["content.js"]
+    }],
+
+    "browser_action": {
+	"default_icon": {
+	    "16": "icons/axo16.png",
+	    "32": "icons/axo32.png"
+	},
+	"default_title": "Axolink",
+	"default_popup": "popup.html"	
+    },
+
+    "permissions": [
+	"storage"
+    ]
+
+}
+    
+    
