@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	    if (axosoftUrl) {
 		chrome.storage.sync.set({'axosoftUrl': axosoftUrl.value});
 	    }
+	    window.close();
 	});
     }
 });
