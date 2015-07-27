@@ -2,7 +2,9 @@ var axosoftUrl;
 
 function updateTags(tabId) {
     if (axosoftUrl){
-	chrome.tabs.sendRequest(tabId, {"axosoftUrl": axosoftUrl});
+        chrome.tabs.sendMessage(tabId, {
+            axosoftUrl: axosoftUrl
+        });
     }
 }
 
@@ -24,9 +26,9 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 
 chrome.storage.onChanged.addListener(function(changes, areaName){
     if (areaName == 'sync') {
-	if (changes['axosoftUrl']){
-	    axosoftUrl = changes['axosoftUrl'].newValue;
-	}
+        if (changes['axosoftUrl']){
+            axosoftUrl = changes['axosoftUrl'].newValue;
+        }
     }
 });
 

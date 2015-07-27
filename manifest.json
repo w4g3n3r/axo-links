@@ -16,10 +16,16 @@
 	"scripts": ["background.js"]
     },
 
-    "content_scripts": [{
-	"matches": ["http://github.com/*", "https://github.com/*"],
-	"js": ["content.js"]
-    }],
+    "content_scripts": [
+		{
+			"matches": ["http://github.com/*", "https://github.com/*"],
+			"js": ["common.js", "github.js"]
+		},
+		{
+			"matches": ["https://*.slack.com/messages/*"],
+			"js": ["common.js", "slack.js"]
+		}
+	],
 
     "browser_action": {
 	"default_icon": {
